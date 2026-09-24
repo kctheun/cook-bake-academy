@@ -1,0 +1,6 @@
+.env
+.env.*
+*signups*.csv
+*.tar.gz
+.edge-*/
+qa-*.png
