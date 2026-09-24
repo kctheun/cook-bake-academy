@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FBF7F1">
+  <meta name="description" content="Hands-on cooking and baking courses in Singapore. Learn practical skills at Cook & Bake Academy in Orchard Road and Bukit Timah.">
+  <title>Cook &amp; Bake Academy | Hands-on classes in Singapore</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B5652D'/%3E%3Cpath d='M14 39c0-12 7-20 18-20s18 8 18 20v5H14z' fill='%23FBF7F1'/%3E%3Cpath d='M23 26l4 9m8-13l2 11m8-5l-4 8' stroke='%23B5652D' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#top" aria-label="Cook and Bake Academy, home"><span class="wordmark-mark" aria-hidden="true">C<span>&amp;</span>B</span><span>Cook &amp; Bake<br><small>Academy Singapore</small></span></a>
+      <nav aria-label="Main navigation"><a href="#courses">Courses</a><a href="#campuses">Campuses</a><a href="#faq">FAQ</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Hands-on classes in Singapore</p>
+        <h1 id="hero-title">Good food starts with practice.</h1>
+        <p class="hero-pitch">Cook, bake and build skills you can use again at home, with a chef beside you.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#courses">Browse</a><button class="button button-secondary" type="button" id="open-assistant">Ask our course assistant</button></div>
+        <p class="hero-note">Small classes · Located conveniently at Orchard Road &amp; Bukit Timah</p>
+      </div>
+      <div class="hero-collage" aria-hidden="true">
+        <img class="collage-tall" src="https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" width="900" height="1200" fetchpriority="high">
+        <img class="collage-top" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" width="900" height="900">
+        <img class="collage-bottom" src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="" width="900" height="900">
+      </div>
+    </section>
+
+    <section class="courses-section" id="courses" aria-labelledby="courses-title">
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow">Find your next class</p><h2 id="courses-title">Courses to make your own</h2></div><p>Start with a short workshop or make time to master a new technique.</p></div>
+        <div class="course-toolbar">
+          <div class="filters" role="group" aria-label="Filter courses by type">
+            <button type="button" class="filter-chip is-active" data-category="All" aria-pressed="true">All</button>
+            <button type="button" class="filter-chip" data-category="Bakery" aria-pressed="false">Bakery</button>
+            <button type="button" class="filter-chip" data-category="Cooking" aria-pressed="false">Cooking</button>
+          </div>
+          <div class="search-field"><label for="course-search">Search courses</label><input id="course-search" type="search" placeholder="Try bread, wok or beginner" autocomplete="off"></div>
+        </div>
+        <p class="results-count" id="results-count" role="status" aria-live="polite">Loading courses…</p>
+        <div class="course-grid" id="course-grid"></div>
+        <p class="empty-state" id="empty-state" hidden>No courses match your search. Try another word or choose All.</p>
+        <p class="load-error" id="load-error" role="alert" hidden>We couldn’t load the courses right now. Please refresh the page to try again.</p>
+      </div>
+    </section>
+
+    <section class="campuses-section shell" id="campuses" aria-labelledby="campuses-title">
+      <div class="section-heading"><div><p class="eyebrow">Where we teach</p><h2 id="campuses-title">Two kitchens, one way to learn</h2></div></div>
+      <div class="campus-grid"><article class="campus-card"><span class="campus-number">01 / Bakery</span><h3>Orchard Road</h3><p>Make bread, pastry and sweet things with room to practise each step.</p></article><article class="campus-card"><span class="campus-number">02 / Cooking</span><h3>Bukit Timah</h3><p>Work at the stove, learn the technique and take it back to your own kitchen.</p></article></div>
+    </section>
+
+    <section class="faq-section shell" id="faq" aria-labelledby="faq-title"><p class="eyebrow">Good to know</p><h2 id="faq-title">FAQ</h2><div id="faq-items"></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><span>Cook &amp; Bake Academy Singapore</span><a href="#top">Back to top ↑</a></div></footer>
+
+  <dialog class="assistant-dialog" id="course-assistant" aria-labelledby="assistant-title" aria-describedby="assistant-intro">
+    <div class="dialog-header"><div><p class="eyebrow">Course guide</p><h2 id="assistant-title">Find a class that fits</h2></div><button class="dialog-close" type="button" id="close-assistant" aria-label="Close course assistant">×</button></div>
+    <p id="assistant-intro">Tell us what you want to make and where you’re starting. We’ll suggest a few courses.</p>
+    <form id="assistant-form"><div class="assistant-fields"><div><label for="assistant-interest">I want to</label><select id="assistant-interest"><option value="All">Explore both</option><option value="Bakery">Bake</option><option value="Cooking">Cook</option></select></div><div><label for="assistant-level">My level</label><select id="assistant-level"><option value="Any">Show all levels</option><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select></div></div><button class="button button-primary" type="submit">Show me courses</button></form>
+    <div class="assistant-results" id="assistant-results" aria-live="polite"></div>
+  </dialog>
+
+  <dialog class="signup-dialog" id="signup-dialog" aria-labelledby="signup-title">
+    <div class="dialog-header"><div><p class="eyebrow">Course sign-up</p><h2 id="signup-title">Save your place</h2></div><button class="dialog-close" type="button" data-close-signup aria-label="Close sign-up form">×</button></div>
+    <form id="signup-form" novalidate>
+      <section class="signup-course" aria-label="Selected course">
+        <h3>Selected course</h3>
+        <dl><div><dt>Code</dt><dd id="signup-course-code"></dd></div><div><dt>Course</dt><dd id="signup-course-title"></dd></div><div><dt>Total fee</dt><dd id="signup-course-fee"></dd></div><div><dt>Length</dt><dd id="signup-course-weeks"></dd></div><div><dt>Schedule</dt><dd id="signup-course-schedule"></dd></div><div><dt>Campus</dt><dd id="signup-course-campus"></dd></div></dl>
+      </section>
+      <div class="signup-fields">
+        <div class="form-field"><label for="signup-intake">Intake date <span aria-hidden="true">*</span></label><select id="signup-intake" name="intake" required aria-describedby="signup-intake-error"></select><p class="field-error" id="signup-intake-error" hidden></p></div>
+        <div class="form-field"><label for="signup-name">Full name <span aria-hidden="true">*</span></label><input id="signup-name" name="full_name" type="text" autocomplete="name" required minlength="2" aria-describedby="signup-name-error"><p class="field-error" id="signup-name-error" hidden></p></div>
+        <div class="form-field"><label for="signup-email">Email <span aria-hidden="true">*</span></label><input id="signup-email" name="email" type="email" autocomplete="email" required aria-describedby="signup-email-error"><p class="field-error" id="signup-email-error" hidden></p></div>
+        <div class="form-field"><label for="signup-mobile">Singapore mobile <span aria-hidden="true">*</span></label><input id="signup-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="+65 9123 4567" required aria-describedby="signup-mobile-error"><p class="field-error" id="signup-mobile-error" hidden></p></div>
+        <div class="form-field"><label for="signup-experience">Experience</label><select id="signup-experience" name="experience"><option value="None">None</option><option value="Some">Some</option><option value="Confident">Confident</option></select></div>
+        <div class="form-field"><label for="signup-allergies">Allergies</label><textarea id="signup-allergies" name="allergies" rows="3" aria-describedby="allergy-warning"></textarea><p class="allergy-warning" id="allergy-warning" role="status" hidden>This course uses or may contain nuts. Please contact us before attending if you have a nut allergy.</p></div>
+      </div>
+      <div class="signup-checks"><div class="form-field"><label class="check-label" for="signup-consent"><input id="signup-consent" name="consent" type="checkbox" required aria-describedby="signup-consent-error"><span>I agree to be contacted about this sign-up. <span aria-hidden="true">*</span></span></label><p class="field-error" id="signup-consent-error" hidden></p></div><div class="form-field"><label class="check-label" for="signup-newsletter"><input id="signup-newsletter" name="newsletter" type="checkbox"><span>Email me news about future classes (optional).</span></label></div></div>
+      <p class="signup-device-note">This sign-up is saved on this device. Use the email link after saving to send it to the academy.</p>
+      <p class="field-error" id="signup-storage-error" role="alert" hidden></p>
+      <button class="button button-primary" type="submit">Save sign-up</button>
+    </form>
+    <div class="signup-success" id="signup-success" role="status" hidden><h3>Sign-up saved</h3><p>Your reference is <strong id="signup-reference"></strong>.</p><p>It is saved on this device. Email the academy to send your details.</p><a class="button button-primary" id="signup-mailto" href="#">Email the academy</a><button class="button button-secondary" type="button" data-close-signup>Done</button></div>
+  </dialog>
+</body>
+</html>
